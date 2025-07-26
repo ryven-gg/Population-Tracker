@@ -1,8 +1,8 @@
-let basePopulation = 8201000000; // Data real per Juli 2025
+let basePopulation = 8201000000; // Data
 let netGrowthPerSecond = 2.47;
 
 let birthRatePerSecond = 4.3;
-let deathRatePerSecond = 1.83; // kira-kira pas agar 2.47 tetap net
+let deathRatePerSecond = 1.83; //
 
 let baseTime = new Date("2025-07-01T00:00:00Z").getTime();
 
