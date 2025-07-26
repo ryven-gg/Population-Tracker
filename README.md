@@ -17,4 +17,5 @@ Sebuah proyek web sederhana yang menampilkan data populasi dunia secara real-tim
 - GitHub Pages
 
 ## 🧑‍💻 Developer
-Dibuat oleh [ryven-gg](https://github.com/ryven-gg)
+Dibuat oleh [ryven-gg](https://github.com/ryven-gg)/[@ryven.gg](https://discord.com/users/1322092655609647186)
+
