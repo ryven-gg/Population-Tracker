@@ -8,7 +8,7 @@ let baseTime = new Date("2025-07-01T00:00:00Z").getTime();
 
 function updateCounters() {
   let now = Date.now();
-  let secondsElapsed = Math.floor((now - baseTime) / 0.1);
+  let secondsElapsed = (now - baseTime) / 1000; // ← Akurat sampai milidetik
 
   // Total berdasarkan estimasi pertambahan sejak baseTime
   let currentPopulation = basePopulation + (netGrowthPerSecond * secondsElapsed);
@@ -25,4 +25,4 @@ function updateCounters() {
 }
 
 updateCounters();
-setInterval(updateCounters, 1000);
+setInterval(updateCounters, 100); // ← Update setiap 100ms (0.1 detik)
