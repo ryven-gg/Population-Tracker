@@ -1,5 +1,5 @@
 // Estimasi data per 1 Juli 2025
-let basePopulation = 8100000000;
+let basePopulation = 8201000000;
 let birthRatePerSecond = 4.3;
 let deathRatePerSecond = 1.8;
 let netGrowthPerSecond = birthRatePerSecond - deathRatePerSecond;
