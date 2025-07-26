@@ -1,21 +1,19 @@
-// Estimasi data per 1 Juli 2025
-let basePopulation = 8201000000;
+let basePopulation = 8201000000; // Data real per Juli 2025
+let netGrowthPerSecond = 2.47;
+
 let birthRatePerSecond = 4.3;
-let deathRatePerSecond = 1.8;
-let netGrowthPerSecond = birthRatePerSecond - deathRatePerSecond;
+let deathRatePerSecond = 1.83; // kira-kira pas agar 2.47 tetap net
 
 let baseTime = new Date("2025-07-01T00:00:00Z").getTime();
 
 function updateCounters() {
   let now = Date.now();
-  let secondsElapsed = (now - baseTime) / 1000; // ← Akurat sampai milidetik
+  let secondsElapsed = (now - baseTime) / 1000;
 
-  // Total berdasarkan estimasi pertambahan sejak baseTime
   let currentPopulation = basePopulation + (netGrowthPerSecond * secondsElapsed);
   let totalBirths = birthRatePerSecond * secondsElapsed;
   let totalDeaths = deathRatePerSecond * secondsElapsed;
 
-  // Tampilkan ke HTML
   document.getElementById("counter").innerText = currentPopulation.toLocaleString("en-US", {
     maximumFractionDigits: 0
   });
@@ -25,4 +23,4 @@ function updateCounters() {
 }
 
 updateCounters();
-setInterval(updateCounters, 100); // ← Update setiap 100ms (0.1 detik)
+setInterval(updateCounters, 100);
