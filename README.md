@@ -49,14 +49,14 @@ If you find this project useful, consider giving it a ⭐ on GitHub!
 ## 🖼️ Screenshots
 
 ### 🌐 Global Population
-![Global Population](./screenshots/Screenshot-(46).png)
+![Global Population](./screenshots/global-population.png)
 
 ---
 
 ### 🍼 Births & 💀 Deaths
-![Birth and Death Data](./screenshots/Screenshot-(44).png)
+![Birth and Death Data](./screenshots/birth-death.png)
 
 ---
 
 ### 📈 Historical Population Growth
-![Historical Growth](./screenshots/Screenshot-(45).png)
+![Historical Growth](./screenshots/historical-growth.png)
