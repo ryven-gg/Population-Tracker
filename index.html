@@ -2,58 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live World Population</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Population Tracker</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Menu Titik Tiga -->
-  <div class="menu-wrapper">
-    <div class="menu-button" onclick="toggleMenu()">⋮</div>
-    <div class="menu-dropdown" id="menuDropdown">
-      <a href="https://github.com/ryven-gg/Population-Tracker" target="_blank">🔗 GitHub Repository</a>
-    </div>
-  </div>
+  <header>
+    <nav>
+      <button onclick="navigate('global')">🌍 Global</button>
+      <button onclick="navigate('birthdeath')">👶 Birth & Death</button>
+      <button onclick="navigate('history')">📊 History</button>
+      <a href="https://github.com/ryven-gg/Population-Tracker" class="repo" target="_blank">📦 GitHub Repo</a>
+    </nav>
+  </header>
 
-  <div class="container">
-    <div class="card">
-      <h1>🌍 World Population Live</h1>
-      <p class="desc">Perkiraan populasi dunia saat ini</p>
-      <div id="counter">Loading...</div>
+  <main>
+    <!-- Global -->
+    <section id="global" class="page active">
+      <h1>🌍 Global Population</h1>
+      <p>Current estimated global population:</p>
+      <h2 id="counter">Loading...</h2>
+      <canvas id="globalChart"></canvas>
+    </section>
 
-      <div class="sub-counters">
-        <div class="sub">
-          👶 Kelahiran<br />
-          <span id="births">0</span>
-        </div>
-        <div class="sub">
-          ⚰️ Kematian<br />
-          <span id="deaths">0</span>
-        </div>
+    <!-- Birth & Death -->
+    <section id="birthdeath" class="page">
+      <h1>👶 Births & 💀 Deaths</h1>
+      <div class="stat-box">
+        <p>🍼 Total Births since July 1, 2025:</p>
+        <h2 id="births">0</h2>
       </div>
+      <div class="stat-box">
+        <p>⚰️ Total Deaths since July 1, 2025:</p>
+        <h2 id="deaths">0</h2>
+      </div>
+      <div class="fun-facts">
+        <h3>📚 Did You Know?</h3>
+        <ul>
+          <li>🌎 About 385,000 babies are born each day.</li>
+          <li>💉 More people die of heart disease than any other cause.</li>
+          <li>🧬 Global life expectancy is now over 72 years.</li>
+          <li>📈 The world population increased by 1 billion in just 12 years (from 2010 to 2022).</li>
+        </ul>
+      </div>
+    </section>
 
-      <p class="note">Data simulasi berdasarkan estimasi global tahun 2025</p>
-    </div>
-  </div>
-  <footer>
-    Sumber: Estimasi Worldometer & UN Data
-  </footer>
+    <!-- History -->
+    <section id="history" class="page">
+      <h1>📈 Historical Population Growth</h1>
+      <canvas id="historyChart"></canvas>
+    </section>
+  </main>
 
   <script src="script.js"></script>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menuDropdown');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-
-    window.addEventListener('click', function (e) {
-      const menu = document.getElementById('menuDropdown');
-      const button = document.querySelector('.menu-button');
-      if (!button.contains(e.target) && !menu.contains(e.target)) {
-        menu.style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>
