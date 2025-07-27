@@ -6,12 +6,12 @@ body {
   padding: 0;
 }
 
-/* Menu Dropdown */
+/* Titik tiga menu */
 .menu-wrapper {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .menu-button {
