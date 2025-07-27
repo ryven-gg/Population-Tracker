@@ -1,114 +1,120 @@
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #000;
-  color: #0f0;
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+  --accent: #0077ff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container {
+body.dark {
+  --bg: #0e0e0e;
+  --text: #f4f4f4;
+  --accent: #00bfff;
+  --card-bg: #1c1c1c;
+  --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
-  padding: 20px;
+  gap: 1rem;
+  padding: 1.2rem 1rem;
+  position: relative;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
 }
 
-.card {
-  background-color: #111;
-  border: 2px solid #0f0;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #0f0;
-  padding: 30px;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.desc {
-  margin-bottom: 20px;
-}
-
-#counter {
-  font-size: 2em;
+.github-link {
+  position: absolute;
+  right: 80px;
+  text-decoration: none;
+  color: var(--accent);
   font-weight: bold;
-  margin: 20px 0;
+  transition: transform 0.2s, color 0.3s;
 }
 
-.sub-counters {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
+.github-link:hover {
+  transform: scale(1.1);
+  color: #0055cc;
 }
 
-.sub {
+#toggle-theme {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#toggle-theme:hover {
+  transform: rotate(15deg);
+}
+
+/* Main Content */
+main {
   flex: 1;
-  background: #000;
-  border: 1px solid #0f0;
-  padding: 10px;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
-.note {
-  font-size: 0.9em;
-  opacity: 0.7;
+main p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
+#population {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: transform 0.2s, color 0.3s;
+}
+
+#population:hover {
+  transform: scale(1.05);
+  color: #0055cc;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  font-size: 0.8em;
-  padding: 15px;
-  color: #0f0;
-  background: #111;
-  border-top: 1px solid #0f0;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: gray;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
 }
 
-/* Titik Tiga Menu */
-.menu-wrapper {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 999;
-}
-
-.menu-button {
-  font-size: 24px;
-  cursor: pointer;
-  color: #0f0;
-  user-select: none;
-}
-
-.menu-dropdown {
-  display: none;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background-color: #111;
-  border: 1px solid #0f0;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px #0f0;
-}
-
-.menu-dropdown a {
-  color: #0f0;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 5px;
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 600px) {
-  .sub-counters {
-    flex-direction: column;
+/* Responsiveness */
+@media (max-width: 600px) {
+  #population {
+    font-size: 2.5rem;
   }
 
-  .card {
-    padding: 20px;
+  .github-link {
+    right: 60px;
+  }
+
+  #toggle-theme {
+    right: 15px;
   }
 }
