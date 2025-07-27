@@ -1,59 +1,14 @@
 body {
-  background-color: #0a0a0a;
-  color: #00ff99;
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  background: #111;
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Titik tiga menu */
-.menu-wrapper {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 999;
-}
-
-.menu-button {
-  font-size: 28px;
-  cursor: pointer;
-  color: #00ff99;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #111;
-  border: 2px solid #00ff99;
-  box-shadow: 0 0 10px #00ff99;
-  transition: background 0.3s;
-}
-
-.menu-button:hover {
-  background-color: #00ff99;
-  color: #000;
-}
-
-.menu-dropdown {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: #111;
-  border: 2px solid #00ff99;
-  border-radius: 8px;
-  box-shadow: 0 0 15px #00ff99;
-  min-width: 200px;
-  padding: 10px 0;
-}
-
-.menu-dropdown a {
-  display: block;
-  color: #00ff99;
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.menu-dropdown a:hover {
-  background-color: #00ff99;
+body.light {
+  background: #f9f9f9;
   color: #000;
 }
 
@@ -61,40 +16,77 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  padding-top: 60px;
+  min-height: 100vh;
 }
 
 .card {
-  background-color: #111;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #00ff99;
+  background: #222;
+  border: 2px solid limegreen;
+  box-shadow: 0 0 15px limegreen;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
   text-align: center;
-  max-width: 600px;
-  width: 100%;
+}
+
+body.light .card {
+  background: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 10px #007bff;
+}
+
+.desc {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
 #counter {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 20px 0;
-  color: #00ff99;
 }
 
 .sub-counters {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .sub span {
-  font-size: 1.5rem;
-  display: block;
-  margin-top: 5px;
-  color: #00ff99;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #666;
+.note {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.menu {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.menu button,
+.menu a {
+  padding: 5px 10px;
+  background: #222;
+  color: limegreen;
+  border: 1px solid limegreen;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+body.light .menu button,
+body.light .menu a {
+  background: #eee;
+  color: #007bff;
+  border-color: #007bff;
 }
