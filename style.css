@@ -98,3 +98,53 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .github-link {
+    right: 20px;
+    font-size: 0.9rem;
+  }
+
+  #toggle-theme {
+    right: 10px;
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  #population {
+    font-size: 2.2rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .menu-button {
+    font-size: 1.4rem;
+    top: 10px;
+    left: 10px;
+  }
+
+  .menu-dropdown {
+    top: 40px;
+    left: 10px;
+  }
+}
