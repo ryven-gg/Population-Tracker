@@ -1,100 +1,120 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+  --accent: #0077ff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #0e0e0e;
+  --text: #f4f4f4;
+  --accent: #00bfff;
+  --card-bg: #1c1c1c;
+  --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
 body {
-  background-color: #0a0a0a;
-  color: #00ff99;
-  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Titik tiga menu */
-.menu-wrapper {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 999;
-}
-
-.menu-button {
-  font-size: 28px;
-  cursor: pointer;
-  color: #00ff99;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #111;
-  border: 2px solid #00ff99;
-  box-shadow: 0 0 10px #00ff99;
-  transition: background 0.3s;
-}
-
-.menu-button:hover {
-  background-color: #00ff99;
-  color: #000;
-}
-
-.menu-dropdown {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: #111;
-  border: 2px solid #00ff99;
-  border-radius: 8px;
-  box-shadow: 0 0 15px #00ff99;
-  min-width: 200px;
-  padding: 10px 0;
-}
-
-.menu-dropdown a {
-  display: block;
-  color: #00ff99;
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.menu-dropdown a:hover {
-  background-color: #00ff99;
-  color: #000;
-}
-
-.container {
+/* Header */
+header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  gap: 1rem;
+  padding: 1.2rem 1rem;
+  position: relative;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
 }
 
-.card {
-  background-color: #111;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #00ff99;
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
+.github-link {
+  position: absolute;
+  right: 80px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bold;
+  transition: transform 0.2s, color 0.3s;
 }
 
-#counter {
-  font-size: 2.5rem;
-  margin: 20px 0;
-  color: #00ff99;
+.github-link:hover {
+  transform: scale(1.1);
+  color: #0055cc;
 }
 
-.sub-counters {
+#toggle-theme {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#toggle-theme:hover {
+  transform: rotate(15deg);
+}
+
+/* Main Content */
+main {
+  flex: 1;
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
-.sub span {
-  font-size: 1.5rem;
-  display: block;
-  margin-top: 5px;
-  color: #00ff99;
+main p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
+#population {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: transform 0.2s, color 0.3s;
+}
+
+#population:hover {
+  transform: scale(1.05);
+  color: #0055cc;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  color: #666;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: gray;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  #population {
+    font-size: 2.5rem;
+  }
+
+  .github-link {
+    right: 60px;
+  }
+
+  #toggle-theme {
+    right: 15px;
+  }
 }
