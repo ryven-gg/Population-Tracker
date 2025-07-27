@@ -1,10 +1,8 @@
-// Time base = 1 Juli 2025 (Worldometer basis)
 const baseTime = new Date("2025-07-01T00:00:00Z").getTime();
 const basePopulation = 8201000000;
 
-// Birth and death rate per second
-const birthRate = 4.3;   // 4.3 birth per second
-const deathRate = 1.8;   // 1.8 death per second
+const birthRate = 4.3;
+const deathRate = 1.8;
 
 function updatePopulation() {
   const now = Date.now();
@@ -21,13 +19,11 @@ function updatePopulation() {
 setInterval(updatePopulation, 1000);
 updatePopulation();
 
-// Navigation
 function navigate(pageId) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.getElementById(pageId).classList.add("active");
 }
 
-// Historical Chart
 const historyCtx = document.getElementById("historyChart").getContext("2d");
 new Chart(historyCtx, {
   type: "line",
@@ -67,7 +63,6 @@ new Chart(historyCtx, {
   }
 });
 
-// Global Chart (same as history, reuse or show prediction)
 const globalCtx = document.getElementById("globalChart").getContext("2d");
 new Chart(globalCtx, {
   type: "line",
