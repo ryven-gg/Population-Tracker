@@ -43,3 +43,20 @@ This project is licensed under the **MIT License** — feel free to use, modify,
 ## ⭐ Support
 
 If you find this project useful, consider giving it a ⭐ on GitHub!
+
+---
+
+## 🖼️ Screenshots
+
+### 🌐 Global Population
+![Global Population](./screenshots/Screenshot-(46).png)
+
+---
+
+### 🍼 Births & 💀 Deaths
+![Birth and Death Data](./screenshots/Screenshot-(44).png)
+
+---
+
+### 📈 Historical Population Growth
+![Historical Growth](./screenshots/Screenshot-(45).png)
