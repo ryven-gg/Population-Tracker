@@ -1,159 +1,100 @@
-/* Reset & Font */
-* {
-  box-sizing: border-box;
+body {
+  background-color: #0a0a0a;
+  color: #00ff99;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #0e0e0e;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  line-height: 1.6;
-  overflow-x: hidden;
+/* Menu Dropdown */
+.menu-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
 }
 
-/* Container */
+.menu-button {
+  font-size: 28px;
+  cursor: pointer;
+  color: #00ff99;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #111;
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 10px #00ff99;
+  transition: background 0.3s;
+}
+
+.menu-button:hover {
+  background-color: #00ff99;
+  color: #000;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #111;
+  border: 2px solid #00ff99;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00ff99;
+  min-width: 200px;
+  padding: 10px 0;
+}
+
+.menu-dropdown a {
+  display: block;
+  color: #00ff99;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.menu-dropdown a:hover {
+  background-color: #00ff99;
+  color: #000;
+}
+
 .container {
-  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  align-items: center;
+  min-height: 90vh;
 }
 
-/* Card (Main Panel) */
 .card {
-  background: linear-gradient(145deg, #1b1b1b, #141414);
+  background-color: #111;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 255, 100, 0.15);
+  box-shadow: 0 0 30px #00ff99;
   text-align: center;
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 15px 50px rgba(0, 255, 100, 0.3);
-}
-
-.card h1 {
-  font-size: 2.6rem;
-  margin-bottom: 10px;
-  color: #00ffae;
-}
-
-.desc {
-  font-size: 1.15rem;
-  margin-bottom: 30px;
-  color: #cccccc;
 }
 
 #counter {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #39ff14;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #00ff99;
 }
 
-/* Sub Counters (births & deaths) */
 .sub-counters {
   display: flex;
   justify-content: space-around;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
-}
-
-.sub {
-  flex: 1;
-  min-width: 140px;
-  padding: 15px 20px;
-  border-radius: 12px;
-  background-color: #1e1e1e;
-  box-shadow: inset 0 0 8px rgba(0, 255, 100, 0.08);
-  color: #dddddd;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.sub:hover {
-  background-color: #262626;
-  transform: scale(1.03);
+  margin-top: 20px;
 }
 
 .sub span {
+  font-size: 1.5rem;
   display: block;
-  margin-top: 8px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #39ff14;
+  margin-top: 5px;
+  color: #00ff99;
 }
 
-/* Note */
-.note {
-  font-size: 0.95rem;
-  color: #999;
-  margin-top: 10px;
-}
-
-/* Footer */
 footer {
   text-align: center;
-  font-size: 0.85rem;
   padding: 20px;
   color: #666;
-  background-color: #0a0a0a;
-  border-top: 1px solid #222;
 }
-
-/* Responsive */
-@media (max-width: 480px) {
-  .card {
-    padding: 30px 20px;
-  }
-
-  .card h1 {
-    font-size: 1.8rem;
-  }
-
-  #counter {
-    font-size: 2.4rem;
-  }
-
-  .sub span {
-    font-size: 1.5rem;
-  }
-}
-
-.github-link {
-  text-align: center;
-  margin-top: 30px;
-  padding: 10px;
-}
-
-.github-link a {
-  color: #00ff99;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  background-color: #111;
-  padding: 10px 20px;
-  border: 2px solid #00ff99;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00ff99;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.github-link a:hover {
-  background-color: #00ff99;
-  color: #000;
-  box-shadow: 0 0 25px #00ff99;
-}
-
